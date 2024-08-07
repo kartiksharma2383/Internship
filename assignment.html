@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+</head>
+<body>
+    <script>
+const complexData = [
+  {
+    id: 1,
+    name: "John Doe",
+    age: 30,
+    address: {
+      street: "123 Main St",
+      city: "Anytown",
+      country: "USA",
+    },
+    orders: [
+      { orderId: "A123", amount: 50.75, status: "completed" },
+      { orderId: "B456", amount: 30.25, status: "pending" },
+    ],
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    age: 25,
+    address: {
+      street: "456 Oak St",
+      city: "Othercity",
+      country: "USA",
+    },
+    orders: [
+      { orderId: "C789", amount: 100.5, status: "completed" },
+      { orderId: "D012", amount: 75.2, status: "completed" },
+    ],
+  },
+];
+
+// 1)
+const usersAge25OrYounger = complexData.filter(user => user.age <= 25);
+console.log(usersAge25OrYounger);
+
+// 2) 
+const userNames = complexData.map(user => user.name);
+console.log(userNames);
+
+// 3) 
+const ordersGreaterThan50 = complexData.flatMap(user => user.orders).filter(order => order.amount > 50);
+console.log(ordersGreaterThan50);
+
+// 4) 
+const orderIds = complexData.flatMap(user => user.orders.map(order => order.orderId));
+console.log(orderIds);
+
+// 5)
+const usersWithPendingOrders = complexData.filter(user => user.orders.some(order => order.status === "pending"));
+console.log(usersWithPendingOrders);
+
+// 6) 
+const userTotalOrderAmounts = complexData.map(user => ({
+  name: user.name,
+  totalAmount: user.orders.reduce((total, order) => total + order.amount, 0),
+}));
+console.log(userTotalOrderAmounts);
+
+// 7) 
+const ordersBetween30And70 = complexData.flatMap(user => user.orders).filter(order => order.amount >= 30 && order.amount <= 70);
+console.log(ordersBetween30And70);
+
+// 8) 
+const userCompletedOrderIds = complexData.map(user => ({
+  name: user.name,
+  completedOrderIds: user.orders.filter(order => order.status === "completed").map(order => order.orderId),
+}));
+console.log(userCompletedOrderIds);
+
+// 9) 
+const usersInUSAWithOrderGreaterThan50 = complexData.filter(user => 
+  user.address.country === "USA" && user.orders.some(order => order.amount > 50)
+);
+console.log(usersInUSAWithOrderGreaterThan50);
+
+</script>
+</body>
+</html>

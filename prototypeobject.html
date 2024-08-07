@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            output(){
+                console.log("hello")
+            },
+            abc(){
+                console.log("hello")
+            }
+        }
+        console.log(obj)
+        obj.output()
+        obj.abc()
+        obj.xyz()
+        console.log(obj.toString())
+        let obj1={
+            output(){
+                console.log("hello")
+            }
+        };
+        let obj2={
+            show(){
+                console.log("hello")
+            }
+        };
+        console.log(obj1)
+        obj1.__proto__=obj2;
+        obj1.output()
+        obj1.show() 
+    </script>
+</body>
+</html>

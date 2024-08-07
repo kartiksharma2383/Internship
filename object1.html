@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects in JS</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            rollno:1001,
+            name:"mohit",
+            age:17,
+            city:"jaipur",
+        };
+        console.log(obj)
+        console.log(obj.name,obj.age)
+        //console.log(obj["name"])
+        for( let i in obj){
+            console.log(i,"=",obj[i])
+        }
+        let arrobj = [
+            {
+                rollno:1001,
+                name:"mohit",
+                age:20,
+                city:"jaipur",
+            },
+            {
+                rollno:1002,
+                name:"mohit1",
+                age:21,
+                city:"jaipur",
+            },
+            {
+                rollno:1003,
+                name:"mohit2",
+                age:21,
+                city:"jaipur",
+            },
+            {
+                rollno:1004,
+                name:"mohit3",
+                age:20,
+                city:"jaipur",
+            },
+            {
+                rollno:1005,
+                name:"mohit4",
+                age:17,
+                city:"jaipur",
+            }
+        ]
+        console.log(arrobj)
+           let x= arrobj.filter((item)=>item.age<18)
+            console.log(x)
+            let aobj = {
+                rollno:1001,
+                fname:"mohit",
+                lname:"sharma",
+                age:17,
+                city:"jaipur",
+                skills:["c","c++","java","python"],
+                fullname:function(){
+                    return this.fname + " "+ this.lname
+                },
+                marks:{
+                    "p":85,
+                    "m":70,
+                    "c":40
+                }
+            };
+            console.log(aobj.fname)
+            console.log(aobj.lname)
+            console.log(aobj.fullname())
+            console.log(aobj.marks)
+            console.log(aobj.marks["c"])       
+    </script>
+</body>
+</html>

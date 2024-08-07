@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Console Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="inp1">
+        <input type="text" id="inp2">
+        <select name="" id="">
+            <option value="Add">Add</option>
+            <option value="Subtract">Subtract</option>
+            <option value="Multiply">Multiply</option>
+            <option value="Divide">Divide</option>
+
+        </select>
+    </div>
+    <script>
+        document.querySelector("select").oninput=function(){
+            let num1=document.querySelector("#inp1").value
+            let num2=document.querySelector("#inp2").value
+            let val=document.querySelector("select").value
+            console.log(num1)
+            console.log(num2)
+
+            console.log(val)
+            if(val=="Add"){
+                console.log(eval(num1+"+"+num2))
+
+            }
+            else if(val=="Subtract"){
+                console.log(eval(num1+"-"+num2))
+
+            } if(val=="Multiply"){
+                console.log(eval(num1+"*"+num2))
+
+            } if(val=="Divide"){
+                console.log(eval(num1+"/"+num2))
+
+            }
+            
+        }
+    </script>
+</body>
+</html>

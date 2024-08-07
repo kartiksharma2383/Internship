@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            border: 2px solid black;
+            padding: 20px;
+            margin: auto;
+            width: 50%;
+        }
+        .box{
+            height: 130px;
+           width:24%;
+            margin: 0px;
+            display: inline-block;
+            border: 2px solid black;
+        }
+        input{
+            width: 30%;
+        
+            height: 30px;
+            padding-left:5px ;
+        }
+        label{
+            font-size: 20px;
+        }
+        button{
+            width: 15%;
+            padding: 10px;
+            border-radius: 2px;
+            border: none;
+            background-color: cadetblue;
+            cursor: pointer;
+            color: white;
+        }
+        .myboxes{
+            /* border: 2px solid black; */
+            padding: 20px;
+            width: 80%;
+            margin: auto;
+        }
+        .input{
+            /* border: 2px solid black; */
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input">
+            <input type="text" id="inp1" placeholder="Enter your color name">
+            <input type="number" id="inp2" placeholder="Select your div">
+         <button>Submit</button>
+        </div>
+       <div class="myboxes">
+        <div class="box" id="_1"></div>
+        <div class="box" id="_2"></div>
+        <div class="box" id="_3"></div>
+        <div class="box" id="_4"></div>
+        <div class="box" id="_5"></div>
+        <div class="box" id="_6"></div>
+        <div class="box" id="_7"></div>
+        <div class="box" id="_8"></div>
+       </div>
+    </div>
+    <script>
+        document.querySelector("button").onclick=function(){
+            let val=document.querySelector("#inp1").value
+            let val1=document.querySelector("#inp2").value
+            console.log(val)
+            console.log(val1)
+            document.querySelector("#"+"_"+val1).style.backgroundColor=val
+            let a=document.querySelectorAll("input")
+            for(let i of a)
+            {
+                i.value=""
+               }
+               document.querySelector("#inp1").focus()
+            //    document.querySelector("#inp2").focus()
+
+         }
+        
+
+    </script>
+</body>
+</html>
